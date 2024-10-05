@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Add page
+{% endblock %}
+
+{% block body %}
+    <h2 style="color: red;">{{ status }}</h2>
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+
+{% endblock %}
